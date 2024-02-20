@@ -10,6 +10,6 @@ terraform {
 provider "proxmox" {
   pm_api_url = var.proxmox["url"]
   pm_api_token_secret = var.proxmox["secret"]
-  pm_api_token_id = var.proxmox["token"]
+  pm_api_token_id = var.proxmox["token_id"]
   pm_tls_insecure = var.proxmox["tls_insecure"]
 }
