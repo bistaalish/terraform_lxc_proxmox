@@ -2,11 +2,11 @@ resource "proxmox_lxc" "lxc" {
     # General
     target_node = var.general["node"]
     hostname = var.general["hostname"]
-    password =  var.general["password"]
+    password =  var.password
     unprivileged = try(var.general["unprivileged"],"true")
     start = try(var.general["start"],"false")
     ssh_public_keys = <<-EOT
-    ${try(var.general["ssh_public_key"],"")}
+    ${try(var.ssh_public_key,"")}
     EOT
     features {
         nesting = try(var.general["nesting"],true)
@@ -22,7 +22,7 @@ resource "proxmox_lxc" "lxc" {
     size = try(var.general.disk_size,"8G")
     }
     # CPU 
-    cores = try(var.general.cpus,"2")
+    cores = try(var.general.cpus,"1")
     
     # Memory
     swap = try(var.general.memory,"512")
