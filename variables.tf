@@ -1,5 +1,5 @@
 variable "pm_url" {
-  type = "string"
+  type = string
 }
 variable "pm_secret" {
   type = string
@@ -9,7 +9,8 @@ variable "pm_token_id" {
   type = string
 }
 variable "pm_tls_insecure" {
-  
+  default = "true"
+  type = string
 }
 variable "general" {
   type = map(string)
